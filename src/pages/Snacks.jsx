@@ -1,3 +1,14 @@
+import { useLoaderData } from 'react-router-dom'
+import { CardProduct } from '../components/Card'
+
 export const Snacks = () => {
-    return <div>Snacks</div>
+    const snacks = useLoaderData()
+
+    return (
+        <>
+            {snacks.map((producto) => (
+                <CardProduct key={producto.id} descripcion={producto.Descripcion} />
+            ))}
+        </>
+    )
 }

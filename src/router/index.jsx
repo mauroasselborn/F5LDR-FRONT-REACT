@@ -1,28 +1,28 @@
 import { createBrowserRouter } from 'react-router-dom'
-import Root from '../layouts/Root'
-import { loaderProductos } from '../loaders/productos'
+import App from '../App'
+import { loaderBebidas, loaderComidas, loaderSnacks } from '../loaders/productos'
 import { Bebidas, Comidas, Snacks } from '../pages'
 
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: <Root />,
+        element: <App />,
         children: [
             {
                 index: true,
                 element: <Bebidas />,
-                loader: loaderProductos,
+                loader: loaderBebidas,
             },
             {
                 path: '/comidas',
                 element: <Comidas />,
-                // loader: loaderProductos,
+                loader: loaderComidas,
             },
             ,
             {
                 path: '/snacks',
                 element: <Snacks />,
-                // loader: loaderProductos,
+                loader: loaderSnacks,
             },
         ],
     },
