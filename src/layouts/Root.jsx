@@ -1,7 +1,7 @@
 import { Outlet, useNavigation } from 'react-router-dom'
-import Navbar from '../components/Navbar'
+import { Navbar } from '../components'
 
-const Layout = () => {
+const Root = () => {
     const navigation = useNavigation()
 
     return (
@@ -14,4 +14,4 @@ const Layout = () => {
         </div>
     )
 }
-export default Layout
+export default Root

@@ -1,25 +1,28 @@
 import { createBrowserRouter } from 'react-router-dom'
-import { Footer, Navegacion } from '../components'
-import Layout from '../layouts/Layout'
+import Root from '../layouts/Root'
+import { loaderProductos } from '../loaders/productos'
 import { Bebidas, Comidas, Snacks } from '../pages'
 
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: <Layout />,
+        element: <Root />,
         children: [
             {
                 index: true,
                 element: <Bebidas />,
+                loader: loaderProductos,
             },
             {
                 path: '/comidas',
                 element: <Comidas />,
+                // loader: loaderProductos,
             },
             ,
             {
                 path: '/snacks',
                 element: <Snacks />,
+                // loader: loaderProductos,
             },
         ],
     },
