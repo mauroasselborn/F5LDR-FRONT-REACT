@@ -2,12 +2,7 @@ import { Box, Button, Card, CardActions, CardContent, CardMedia, Typography } fr
 
 export const CardProduct = ({ descripcion }) => {
     return (
-        <Box
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-            }}
-        >
+        <Box style={{ border: '1px solid black' }}>
             <Card sx={{ maxWidth: 345 }}>
                 <CardMedia
                     sx={{ height: 140 }}
