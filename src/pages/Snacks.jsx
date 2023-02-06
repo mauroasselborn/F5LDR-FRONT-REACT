@@ -3,6 +3,7 @@ import { CardProduct } from '../components/Card'
 
 export const Snacks = () => {
     const snacks = useLoaderData()
+    document.title = 'Snacks'
 
     return (
         <>
