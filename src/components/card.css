@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --color-border: rgba(0, 0, 0, 0.3);
+    --color-border-hover: rgb(39, 98, 177);
+    --color-bk: rgba(255, 255, 255, 0.89);
+    --color-card-bk: rgba(255, 255, 255, 85);
+    --color-card-bk-img: rgba(47, 179, 57, 0.5);
+    --color-card-body-p: rgba(0, 0, 0, 0.6);
+    --color-card-footer-button: rgba(0, 0, 0, 0.9);
+    --border-radius: 1rem;
+}

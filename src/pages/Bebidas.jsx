@@ -3,7 +3,7 @@ import { CardProduct } from '../components/Card'
 
 export const Bebidas = () => {
     const bebidas = useLoaderData()
-    document.title = 'Bebidas'
+    document.title = 'F5LDR | Bebidas'
     return (
         <>
             {bebidas.map((producto) => (
