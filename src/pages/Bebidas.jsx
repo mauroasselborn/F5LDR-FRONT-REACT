@@ -1,5 +1,5 @@
 import { useLoaderData } from 'react-router-dom'
-import { CardProduct } from '../components/Card'
+import { CardProduct } from '../components'
 
 export const Bebidas = () => {
     const bebidas = useLoaderData()
