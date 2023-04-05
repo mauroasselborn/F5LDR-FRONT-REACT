@@ -1,39 +1,48 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './card.css'
+import logo from '../imgs/default.png'
 
-export const CardProduct = ({ descripcion }) => {
-    const [state, setState] = useState(0)
+export const CardProduct = ({ producto }) => {
+    const [cantidad, setCantidad] = useState(0)
+    const [stock, setStock] = useState(producto.stock)
+    const [total, setTotal] = useState(0)
+
+    useEffect(() => {
+        totalizar()
+    }, [cantidad])
+
+    const totalizar = () => {
+        setTotal(cantidad * producto.valor)
+    }
+
+    const handleSumCant = () => {
+        setStock(stock - 1)
+        setCantidad(cantidad + 1)
+        console.log(cantidad)
+    }
+    const handleResCant = () => {
+        setStock(stock + 1)
+        setCantidad(cantidad - 1)
+        console.log(cantidad)
+    }
 
     return (
-        <div className="card-container">
-            {/* <h4>card</h4> */}
-            <div className="card-img">
-                {/* <p>img</p> */}
-                <img src="https://pbs.twimg.com/media/DachyweUQAAreh9?format=jpg&name=4096x4096" width="260px" height="250px" />
+        <div className="card">
+            <div className="img">
+                <img src={`src/imgs/${producto.srcImg}`} height="200px" />
             </div>
-
             <div className="card-body">
-                <h3>{descripcion}</h3>
-            </div>
-
-            <div className="card-footer">
-                <div className="card-buttons">
-                    <div
-                        className="card-button"
-                        onClick={() => {
-                            state > 0 && setState(state - 1)
-                        }}
-                    >
-                        <p>-</p>
-                    </div>
-                    <p className="card-state">{state}</p>
-                    <div className="card-button" onClick={() => setState(state + 1)}>
-                        <p>+</p>
-                    </div>
-                </div>
-                <div className="card-buttonadd">
-                    <p onClick={() => alert(`Se agregaron ${state} cervezas al carrito`)}>Agregar</p>
-                </div>
+                <h2 className="card-title">{producto.descripcion}</h2>
+                <p className="card-text">Valor: {producto.valor}$</p>
+                <p>Stock: {stock}</p>
+                <p>Cantidad a Vender {cantidad}</p>
+                <p>Total {total}$</p>
+                <button onClick={stock > 0 && handleSumCant} className="btn btn-primary">
+                    +
+                </button>
+                <button onClick={cantidad <= 0 && handleResCant} className="btn btn-primary">
+                    -
+                </button>
             </div>
         </div>
     )

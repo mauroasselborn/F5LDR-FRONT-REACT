@@ -6,10 +6,10 @@ export const Snacks = () => {
     document.title = 'F5LDR | Snacks'
 
     return (
-        <>
+        <div className="productos">
             {snacks.map((producto) => (
-                <CardProduct key={producto.id} descripcion={producto.Descripcion} />
+                <CardProduct key={producto.id} producto={producto} />
             ))}
-        </>
+        </div>
     )
 }

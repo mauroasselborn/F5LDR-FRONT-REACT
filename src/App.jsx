@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { Outlet, useNavigation } from 'react-router-dom'
-import { Form } from './components/Form'
 import { Navbar } from './components/NavBar'
 
 const Root = () => {
